@@ -217,13 +217,39 @@ export default function Body() {
         setFlag(0)
         setDotcounter(0)
     }
+    function backSpace()
+    {
+        // setCount(prevCount=>({
+        //     // ...prevCount,
+        //     // count:count.slice(0,-1)
+        // }))
+        if(count.length>0)
+        {
+            const deleteString = count.slice(-1)
+            const newString1 = count1.slice(0,-1)
+            const newString = count.slice(0,-1)
+            setCount(newString)
+            setCount1(newString1)
+            if(deleteString==='.')
+            {
+                setDotcounter(0)
+            }
+           // console.log(deleteString)
+        }
+        if(count.length===1)
+        {
+            setCount("0")
+            setCount1("")
+        }
+         
+    }
 
   
 
-   console.log(sign)
-    console.log(cnt)
-    console.log(count1)
-    console.log(count)
+//    console.log(sign)
+//     console.log(cnt)
+//     console.log(count1)
+//     console.log(count)
     
 
     return (
@@ -243,27 +269,27 @@ export default function Body() {
                 />
             </div>
             <div className="grid-container">
-                <div  className="grid-item1" onClick={clear}>C</div>
-                <div  className="grid-item2" onClick={()=>getValue(' / ')}>/</div>
-                <div  className="grid-item3" onClick={()=>getValue(' * ')}>*</div>
-                <div  className="grid-item4" onClick={()=>getValue(' - ')}>-</div>
+                <div  className="grid-item1"  onClick={clear}>C</div>
+                <div  className="grid-item2"  onClick={()=>getValue(' / ')}>/</div>
+                <div  className="grid-item3"  onClick={()=>getValue(' * ')}>*</div>
+                <div  className="grid-item4"  onClick={()=>getValue(' - ')}>-</div>
                 <div  className="grid-item5"  onClick={()=>getValue('7')}>7</div>
-                <div  className="grid-item6" onClick={()=>getValue('8')}>8</div>
-                <div  className="grid-item7" onClick={()=>getValue('9')}>9</div>
-                <div  className="grid-item8" onClick={()=>getValue(' + ')}>+</div>
-                <div  className="grid-item9" onClick={()=>getValue('4')}>4</div>
+                <div  className="grid-item6"  onClick={()=>getValue('8')}>8</div>
+                <div  className="grid-item7"  onClick={()=>getValue('9')}>9</div>
+                <div  className="grid-item8"  onClick={()=>getValue(' + ')}>+</div>
+                <div  className="grid-item9"  onClick={()=>getValue('4')}>4</div>
                 <div  className="grid-item10" onClick={()=>getValue('5')}>5</div>
                 <div  className="grid-item11" onClick={()=>getValue('6')}>6</div>
-                <div  className="grid-item12">
+                <div  className="grid-item12" onClick={backSpace}>
                     <img src={logo3} className="img" alt=""/>
                 </div>
                 <div  className="grid-item13"  onClick={()=>getValue('1')}>1</div>
-                <div  className="grid-item14" onClick={()=>getValue('2')}>2</div>
-                <div  className="grid-item15" onClick={()=>getValue('3')}>3</div>
-                <div  className="grid-item16" onClick={getOutput}>=</div>
-                <div  className="grid-item17" onClick={()=>getValue('0')}>0</div>
-                <div  className="grid-item18" onClick={changeSign}>&#8722; </div>
-                <div  className="grid-item19" onClick={()=>getValue('.')}>.</div> 
+                <div  className="grid-item14"  onClick={()=>getValue('2')}>2</div>
+                <div  className="grid-item15"  onClick={()=>getValue('3')}>3</div>
+                <div  className="grid-item16"  onClick={getOutput}>=</div>
+                <div  className="grid-item17"  onClick={()=>getValue('0')}>0</div>
+                <div  className="grid-item18"  onClick={changeSign}>&#8722; </div>
+                <div  className="grid-item19"  onClick={()=>getValue('.')}>.</div> 
             </div>
         </div>
     )
