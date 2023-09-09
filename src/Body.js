@@ -29,10 +29,10 @@ export default function Body() {
             setDotcounter(0)
             f=1 
         }
-        //console.log(f)
         if(f===1 )
         {
             setCount("")
+          //  setCount1()
            // console.log("gaurav")
         }
         if(f===0)
@@ -99,6 +99,7 @@ export default function Body() {
                 {
                     setCount("")
                 }
+                
                 if(y==='.')
                 {
                     if(dotcounter===0)
@@ -111,14 +112,17 @@ export default function Body() {
                     {
                         setDotcounter(dotcounter+1)
                     }
-                    
+
                 }
                 else if(y!=='.')
                 {
                     setCount(x=>x+y)  
                     setCount1(x=>x+y)
                 }
-                setCnt(cnt+1)
+                if(cnt>=1)
+                {
+                    setCnt(cnt+1)
+                }
                 setFlag(0)  
             }
             
@@ -135,7 +139,9 @@ export default function Body() {
             const c= num1 + num2;
             const result = c.toString();
             setCount("")
+            setCount1("")
             setCount(x=>x+result)
+            setCount1(x=>x+result)
         }
         else if(sign===' - ')
         {
@@ -143,6 +149,7 @@ export default function Body() {
             const result = c.toString();
             setCount("")
             setCount(x=>x+result)
+            setCount1(result)
              
         }
         else if(sign===' * ')
@@ -151,6 +158,7 @@ export default function Body() {
             const result = c.toString();
             setCount("")
             setCount(x=>x+result)
+            setCount1(result)
 
         }
         else if(sign===' / ')
@@ -159,11 +167,13 @@ export default function Body() {
             const result = c.toString();
             setCount("")
             setCount(x=>x+result)
+            setCount1(result)
 
         }
-        setCount1("")
+      //  setCount1(count)
         setCount2("")
         setSign("")
+        setCnt(0)
     }
 
     function changeSign()
@@ -210,10 +220,10 @@ export default function Body() {
 
   
 
-   // console.log(sign)
-    // console.log(cnt)
-    // console.log(count1)
-    // console.log(count)
+   console.log(sign)
+    console.log(cnt)
+    console.log(count1)
+    console.log(count)
     
 
     return (
@@ -228,7 +238,7 @@ export default function Body() {
                 <input 
                 type="text" 
                 className="curr-op" 
-                value={cnt===2 ? count1:count}
+                value={cnt===1 ? count1:count}
                 disabled
                 />
             </div>
