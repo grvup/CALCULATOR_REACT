@@ -8,6 +8,7 @@ export default function Body() {
     const [sign,setSign] = React.useState("");
     const [cnt,setCnt] = React.useState(0);
     const [flag,setFlag] = React.useState(0);
+    const [flag2,setFlag2] = React.useState(0);
     const [dotcounter,setDotcounter] = React.useState(0)
    // const [negcounter,setNegcounter] = React.useState(1)
     let f=0
@@ -116,6 +117,12 @@ export default function Body() {
                 }
                 else if(y!=='.')
                 {
+                    if(cnt===0 && flag2===1)
+                    {
+                        setCount("")
+                        setCount1("")
+                        setFlag2(0)
+                    }
                     setCount(x=>x+y)  
                     setCount1(x=>x+y)
                 }
@@ -171,6 +178,7 @@ export default function Body() {
 
         }
       //  setCount1(count)
+        setFlag2(1)
         setCount2("")
         setSign("")
         setCnt(0)
@@ -246,10 +254,10 @@ export default function Body() {
 
   
 
-//    console.log(sign)
-//     console.log(cnt)
-//     console.log(count1)
-//     console.log(count)
+   console.log(sign)
+    console.log(cnt)
+    console.log(count1)
+    console.log(count)
     
 
     return (
