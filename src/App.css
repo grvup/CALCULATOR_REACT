@@ -19,7 +19,6 @@
   display: grid;
   margin-top: 10px;
   justify-content: center;
-  position: relative;
   
 }
 /* .form{
@@ -34,33 +33,49 @@
     text-align: right;
     vertical-align: bottom;
 } */
-.output-grid{
-  grid-area: o-grid;
- 
-}
+
 .output{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
-  width: 400px;
-  height: 100px;
+  width: 340px;
+  height: 90px;
   background-color: #282c34;
   border: 4px solid rgba(255, 255, 255, 0.8);
-  grid-template-areas: 'o-grid o-grid o-grid o-grid';
   border-radius: 10px;
   font-size: 30px;
-  padding: 5px;
   word-wrap: break-word;
   word-break: break-all;
+  padding: 6px 6px 1px 1px;
+
 }
 .output .prev-op{
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
+ color:rgba(176, 173, 173, 0.8) ;
+ border: 0px solid  #282c34;
+ background-color: #282c34;
+ font-size: 1.3rem;
+ width: 97.5%;
+ height: 40%;
+ text-align: right;
+ vertical-align: bottom;
+ border-radius: none;
+ word-wrap: break-word;
+  word-break: break-all;
+ 
 }
 .output .curr-op{
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 25px;
+  color:white ;
+  border: 0px solid  #282c34;
+  background-color: #282c34;
+  width: 97.5%;
+  height: 50%;
+  text-align: right;
+  vertical-align: bottom;
+  border-radius: none;
+  font-size: 2.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  
 }
 .grid-item1{
   grid-area: c;
@@ -99,9 +114,8 @@
 }
 .grid-item8{
   grid-area: plus;
-  height: 104px;
-    padding: 71px 0px 10px 0px;
-    cursor: pointer;
+  padding: 20px 0;
+  cursor: pointer;
 }
 .grid-item9{
   grid-area: four;
@@ -116,6 +130,12 @@
 .grid-item11{
   grid-area: six;
   padding: 20px 0;
+  cursor: pointer;
+}
+.grid-item12{
+  grid-area: bs;
+  padding: 16px 0px;
+  font-size: 10px;
   cursor: pointer;
 }
 .grid-item13{
@@ -136,7 +156,7 @@
 .grid-item16{
   grid-area: enter;
   height: 104px;
-  padding: 71px 0px 10px 0px;
+  padding: 53px 0px 12px 0px;
   cursor: pointer;
 }
 .grid-item17{
@@ -151,19 +171,22 @@
 }
 .grid-container {
   display: grid;
-  background-color: #282c34;
-  padding: 10px;
-  width: 400px;
-  height: 500px;
-  margin-top: 10px;
-  align-items: center;
-  gap: 10px 15px;
-  grid-template-areas:  'c division asteric minus'
-                        'seven eight nine plus' 
-                        'four five six plus'
-                        'one two three enter'
-                        'zer zer dot enter';
-  border-radius: 10px;
+    background-color: #282c34;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    width: 93%;
+    height: 94%;
+    margin-top: 10px;
+    margin-left: -1px;
+    align-items: center;
+    gap: 10px 15px;
+    grid-template-areas:
+        'c division asteric bs'
+        'seven eight nine minus'
+        'four five six plus'
+        'one two three enter'
+        'zer zer dot enter';
+    border-radius: 10px;
   
 }
 .grid-container>div {
