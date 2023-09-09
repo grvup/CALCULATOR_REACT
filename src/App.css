@@ -1,3 +1,6 @@
+*{
+  user-select: none;
+}
 .App {
   text-align: center;
 }
@@ -44,8 +47,6 @@
   border: 4px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   font-size: 30px;
-  word-wrap: break-word;
-  word-break: break-all;
   padding: 6px 6px 1px 1px;
 
 }
@@ -134,9 +135,20 @@
 }
 .grid-item12{
   grid-area: bs;
-  padding: 16px 0px;
-  font-size: 10px;
+  padding: 20px 0px;
   cursor: pointer;
+  transition: 200ms ease-in-out;
+
+}
+.grid-item12 .img{
+  width: 20px;
+  height: 23px;
+ 
+}
+.grid-item12 .img:hover{
+  background-color: white;
+  color: white;
+  
 }
 .grid-item13{
   grid-area: one;
@@ -164,6 +176,11 @@
   padding: 20px 0;
   cursor: pointer;
 }
+.grid-item18{
+  grid-area: negative;
+  padding: 20px 0;
+  cursor: pointer;
+}
 .grid-item19{
   grid-area: dot;
   padding: 20px 0;
@@ -185,7 +202,7 @@
         'seven eight nine minus'
         'four five six plus'
         'one two three enter'
-        'zer zer dot enter';
+        'negative zer dot enter';
     border-radius: 10px;
   
 }
